@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Announcement</title>
+    <style>
+       body {
+      background-image: url('mos6.gif');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+
+        h1 {
+      color: #f3f0f0;
+      text-align: center;
+      padding: 20px;
+      background-color:  #3498db; /* Change the background color and transparency as desired */
+    }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: transparent;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Create Announcement</h1>
+    <form id="announcementForm">
+        <label for="title">Title:</label>
+        <input type="text" id="title" required><br>
+
+        <label for="content">Content:</label>
+        <input type="date" id="content" required><br>
+
+        <button type="submit">Create Announcement</button>
+    </form>
+
+    <script>
+        document.getElementById("announcementForm").addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            const title = document.getElementById("title").value;
+            const content = document.getElementById("content").value;
+
+            function randomId() {
+                return Math.floor(Math.random() * 1000000000); // Generates a random number between 0 and 999999999
+            }
+
+            const payload = {
+                IdAnnouncement: randomId(),
+                Announcement: title,
+                AnnouncementDate: content,
+                createdby: "USER",
+                AnnouncemnentStaus: "NotApproved",  
+
+            };
+
+            try {
+                const response = await fetch("http://localhost:3002/announcement/create", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(payload)
+                });
+
+                if (response.ok) {
+                    alert("Announcement created successfully!");
+                } else {
+                    alert("Error creating announcement.");
+                }
+            } catch (error) {
+                console.error("An error occurred:", error);
+                alert("An error occurred while creating the announcement.");
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      background-image: url('mos1.gif');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header styles */
+    .header {
+      background-color: #3498db;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header h1 {
+      margin: 0;
+      font-size: 24px;
+      color: #fcfcfd;
+      
+    }
+
+    .header .sign-out {
+      color: #0f1114;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .header .sign-out:hover {
+      color: #fff;
+    }
+
+    /* Content area styles */
+    .content-area {
+      background-color: transparent;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .action-buttons button {
+      background-color: #6c63ff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .action-buttons button:hover {
+      background-color: #574fde;
+      transform: scale(1.05);
+    }
+
+    .beautiful-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+  </style>
+
+
+
+
+</head>
+<body>
+  <div class="header">
+    <h1>Signed as Mosque Community Member</h1>
+   
+    <a class="sign-out" href="#" onclick="signOut()">Sign Out</a>
+  </div>
+  
+  
+     
+    <div class="content-area">
+        <div class="action-buttons">
+          <button onclick="Annnouncement()">Annnouncement</button>
+          <button onclick="Annnouncementreq()">Check Announcement request</button>
+          <button onclick="bookimam()">Book Imam Requests</button>
+          <button onclick="salatTime()">Update Namaz Time</button>
+          <button onclick="viewmosque()">View Moqsue</button>
+          <button onclick="Alquran()">Send Notice MAil</button>
+          
+          <button onclick="Balance()">Mosjid Balance</button>
+        </div>
+    </div>
+        <div class="center-container">
+          <br>   </br>
+          <br>   </br>
+            <h1  style="color:rgb(248, 248, 248)"> Here You can add Your Details Of Mosjid and Create Mosque Profile </h1>
+             <br> </br>
+            <button class="beautiful-button" onclick="newpage()">Create An Mosjid Profile</button>
+          </div>
+
+        
+          
+  
+
+  <script>
+    function newpage() {
+      // Handle fetch data functionality here
+      window.location.href = "./addMosjid.html";
+    }
+   function signOut() {
+      // Handle sign out functionality here
+      alert('Signing out...');
+      window.location.href = "./index.html";
+    }
+
+    function Annnouncement() {
+      // Handle add user functionality here
+   
+      window.location.href = "./Announcement.html";
+    }
+
+    function Annnouncementreq() {
+      window.location.href = `./ApproveAnnoucement.html`;
+
+    }
+
+    function bookimam() {
+      // Handle add Mosjid functionality here
+      window.location.href = `./ApproveBooking.html`;
+    }
+
+    function salatTime() {
+      // Handle remove Mosjid functionality here
+      window.location.href = "./UpdateNamaztime.html";
+    }
+
+    function viewmosque() {
+      
+      window.location.href = "./mosqueinfo.html";
+    }
+  
+    function Alquran() {
+      // Handle update Mosjid functionality here
+      window.location.href = "./MailNotice.html";
+    }
+    function Balance() {
+      // Handle update Mosjid functionality here
+      window.location.href = "./Balance.html";
+    }
+    function updateMosjid() {
+      // Handle update Mosjid functionality here
+      window.location.href = "./Quran.html";
+    }
+   
+
+
+
+// Call displayData to fetch and show data when the page loads
+displayData();
+  </script>
+</body>
+</html>

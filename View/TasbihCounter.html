@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Counter with Limit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            
+            background-color: #7ad5e7;
+            background-image: url('tasbih1.gif');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: 100% 100%;
+        }
+        
+
+        .counter {
+            bottom: 30px ;
+            font-style: bold;
+            font-size: 50px;
+            margin: 140px;
+            margin-bottom: 50px;
+        }
+
+        .button {
+            background-color: #506edb;
+            font-size: 40px;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        .reset-btn {
+            background-color: #787b7e;
+        }
+    </style>
+</head>
+<body>
+    <div class="counter" id="counterDisplay">0</div>
+    <button class="button" onclick="increment()"><b>Increase</b></button>
+    <button class="button reset-btn" onclick="reset()"><b>Reset</b></button>
+
+    <script>
+        let counterValue = 0;
+        const counterDisplay = document.getElementById('counterDisplay');
+        const countLimit = 1000; // count limit
+
+        function increment() {
+            if (counterValue < countLimit) {
+                counterValue++;
+                updateCounterDisplay();
+            } else {
+                alert('Count limit reached!');
+            }
+        }
+
+        function reset() {
+            counterValue = 0;
+            updateCounterDisplay();
+        }
+
+        function updateCounterDisplay() {
+            counterDisplay.textContent = counterValue;
+        }
+
+        updateCounterDisplay(); // Set initial value on page load
+    </script>
+</body>
+</html>

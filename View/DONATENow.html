@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate Now</title>
+  <link rel="stylesheet" href="./stylesheet.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      background-image: url('d1.gif');
+      background-position: center bottom;
+      background-repeat: no-repeat;
+
+      background-attachment: fixed;
+     
+      
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: transparent;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    h1 {
+      color: #f3f0f0;
+      text-align: center;
+      padding: 20px;
+      background-color:  #3498db; /* Change the background color and transparency as desired */
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      color: #333;
+      font-weight: bold;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .result {
+      margin-top: 20px;
+    }
+
+    .result p {
+      font-size: 18px;
+      color: #333;
+    }
+
+
+    .content-area {
+      background-color: white;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .action-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .action-buttons button {
+      background-color: #6c63ff;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .action-buttons button:hover {
+      background-color: #574fde;
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Donate Now</h1>
+    <form id="donationForm">
+     
+      <div class="form-group">
+        <label for="amount">Amount:</label>
+        <input type="number" id="Amount" name="Amount" required>
+      </div>
+      <div class="form-group">
+        <label for="mosqueName">Mosque Name:</label>
+        <input type="text" id="mosqueName" name="MosqueName" required>
+      </div>
+      <button type="submit">Donate</button>
+    </form>
+  </div>
+
+  <script src="scriptmos.js"></script>
+</body>
+</html>
